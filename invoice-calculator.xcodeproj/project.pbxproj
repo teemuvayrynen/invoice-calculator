@@ -18,6 +18,8 @@
 		DA8B490F2917F779008387D0 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B490E2917F779008387D0 /* AddItemView.swift */; };
 		DA8B491429182441008387D0 /* SearchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B491329182441008387D0 /* SearchItemView.swift */; };
 		DA8B49162918252F008387D0 /* BoxViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B49152918252F008387D0 /* BoxViewModifier.swift */; };
+		DAEEEFB429191EEE00E50F41 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEEFB329191EEE00E50F41 /* ImagePickerView.swift */; };
+		DAEEEFB8291921BD00E50F41 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEEFB7291921BD00E50F41 /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		DA8B490E2917F779008387D0 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		DA8B491329182441008387D0 /* SearchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemView.swift; sourceTree = "<group>"; };
 		DA8B49152918252F008387D0 /* BoxViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxViewModifier.swift; sourceTree = "<group>"; };
+		DAEEEFB329191EEE00E50F41 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		DAEEEFB7291921BD00E50F41 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		DA8B48DA2917CC31008387D0 /* invoice-calculator */ = {
 			isa = PBXGroup;
 			children = (
+				DACE0B3C291852180051091B /* functions */,
 				DA8B4910291821EC008387D0 /* modifiers */,
 				DA8B49062917E414008387D0 /* View */,
 				DA8B48DB2917CC31008387D0 /* invoice_calculatorApp.swift */,
@@ -142,19 +147,20 @@
 		DA8B49062917E414008387D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DA8B490B2917F6E5008387D0 /* SearchView */,
+				DAEEEFB229191EDF00E50F41 /* camera */,
+				DA8B490B2917F6E5008387D0 /* Search */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		DA8B490B2917F6E5008387D0 /* SearchView */ = {
+		DA8B490B2917F6E5008387D0 /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				DA8B490C2917F737008387D0 /* SearchView.swift */,
 				DA8B490E2917F779008387D0 /* AddItemView.swift */,
 				DA8B491329182441008387D0 /* SearchItemView.swift */,
 			);
-			path = SearchView;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		DA8B4910291821EC008387D0 /* modifiers */ = {
@@ -163,6 +169,22 @@
 				DA8B49152918252F008387D0 /* BoxViewModifier.swift */,
 			);
 			path = modifiers;
+			sourceTree = "<group>";
+		};
+		DACE0B3C291852180051091B /* functions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = functions;
+			sourceTree = "<group>";
+		};
+		DAEEEFB229191EDF00E50F41 /* camera */ = {
+			isa = PBXGroup;
+			children = (
+				DAEEEFB329191EEE00E50F41 /* ImagePickerView.swift */,
+				DAEEEFB7291921BD00E50F41 /* CameraView.swift */,
+			);
+			path = camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,7 +320,9 @@
 				DA8B48DE2917CC31008387D0 /* ContentView.swift in Sources */,
 				DA8B490D2917F737008387D0 /* SearchView.swift in Sources */,
 				DA8B490F2917F779008387D0 /* AddItemView.swift in Sources */,
+				DAEEEFB8291921BD00E50F41 /* CameraView.swift in Sources */,
 				DA8B491429182441008387D0 /* SearchItemView.swift in Sources */,
+				DAEEEFB429191EEE00E50F41 /* ImagePickerView.swift in Sources */,
 				DA8B48DC2917CC31008387D0 /* invoice_calculatorApp.swift in Sources */,
 				DA8B49162918252F008387D0 /* BoxViewModifier.swift in Sources */,
 			);
@@ -459,6 +483,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take picture";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -497,6 +522,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take picture";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

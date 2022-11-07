@@ -8,29 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isImagePickerDisplay = false
+    @State private var selection = 0
+    @State private var selectedImage: UIImage?
     
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             Text("test")
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
                 }
+                .tag(0)
             
             
-            Text("Camera")
+            CameraView(isImagePickerDisplay: $isImagePickerDisplay, selection: $selection, selectedImage: $selectedImage)
                 .tabItem {
-                    Image(systemName: "camera")
-                        
-                        
-                    Text("Camera")
+                    Image(systemName: "plusminus.circle")
+                    Text("Calculate")
                 }
+                .onAppear {
+                    if (selectedImage == nil) {
+                        self.isImagePickerDisplay.toggle()
+                    }
+                }
+                .tag(1)
             
             SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
+                .tag(2)
         }
     }
 }
