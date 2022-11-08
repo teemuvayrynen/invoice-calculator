@@ -18,11 +18,16 @@ struct SearchView: View {
     
     var body: some View {
         VStack {
-            AddItemView()
-            SearchItemView(searchField: $searchField, searchBooleans: $searchBooleans)
-            Text(String(searchBooleans[0]))
-            Spacer()
-        }.frame(maxWidth: containerWidth * 0.98)
+            VStack {
+                AddItemView()
+                SearchItemView(searchField: $searchField, searchBooleans: $searchBooleans)
+                Text(String(searchBooleans[0]))
+                Spacer()
+            }
+            .padding(.horizontal, 20.0)
+            
+        }
+        .background(Color("View"))
     }
 }
 

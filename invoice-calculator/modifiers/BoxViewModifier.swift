@@ -20,7 +20,7 @@ struct DefaultBoxViewModifier: ViewModifier {
             .background(Color("insertBackground"))
             .clipped()
             .cornerRadius(20)
-            .shadow(radius: 10)
+            .shadow(radius: 6)
             .padding(.bottom, 10.0)
     }
 }

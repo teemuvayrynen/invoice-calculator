@@ -15,13 +15,32 @@ struct CameraView: View {
     
     
     var body: some View {
-        ZStack {
+        VStack {
             if selectedImage != nil {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        selectedImage = nil
+                        isImagePickerDisplay.toggle()
+                    }, label: {
+                        Image(systemName: "camera").foregroundColor(Color.primary)
+                    })
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 14)
+                    .background(Color("insertBackground"))
+                    .cornerRadius(60)
+                    .shadow(radius: 6)
+                    .padding()
+                }
+                Spacer()
+                
                 Image(uiImage: selectedImage!)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipShape(Circle())
                     .frame(width: 300, height: 300)
+                
+                Spacer()
             }
             
         }.sheet(isPresented: self.$isImagePickerDisplay,

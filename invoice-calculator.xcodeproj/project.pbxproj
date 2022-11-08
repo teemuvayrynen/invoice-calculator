@@ -18,6 +18,8 @@
 		DA8B490F2917F779008387D0 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B490E2917F779008387D0 /* AddItemView.swift */; };
 		DA8B491429182441008387D0 /* SearchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B491329182441008387D0 /* SearchItemView.swift */; };
 		DA8B49162918252F008387D0 /* BoxViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B49152918252F008387D0 /* BoxViewModifier.swift */; };
+		DACD13E5291AC1FB000B6096 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD13E4291AC1FB000B6096 /* HomeView.swift */; };
+		DACD13E7291ADFEF000B6096 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD13E6291ADFEF000B6096 /* SettingsView.swift */; };
 		DAEEEFB429191EEE00E50F41 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEEFB329191EEE00E50F41 /* ImagePickerView.swift */; };
 		DAEEEFB8291921BD00E50F41 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEEFB7291921BD00E50F41 /* CameraView.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,8 @@
 		DA8B490E2917F779008387D0 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		DA8B491329182441008387D0 /* SearchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemView.swift; sourceTree = "<group>"; };
 		DA8B49152918252F008387D0 /* BoxViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxViewModifier.swift; sourceTree = "<group>"; };
+		DACD13E4291AC1FB000B6096 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DACD13E6291ADFEF000B6096 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DAEEEFB329191EEE00E50F41 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		DAEEEFB7291921BD00E50F41 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,8 +151,10 @@
 		DA8B49062917E414008387D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DACD13E3291AC1E8000B6096 /* Home */,
 				DAEEEFB229191EDF00E50F41 /* camera */,
 				DA8B490B2917F6E5008387D0 /* Search */,
+				DACD13E6291ADFEF000B6096 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +175,14 @@
 				DA8B49152918252F008387D0 /* BoxViewModifier.swift */,
 			);
 			path = modifiers;
+			sourceTree = "<group>";
+		};
+		DACD13E3291AC1E8000B6096 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DACD13E4291AC1FB000B6096 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		DACE0B3C291852180051091B /* functions */ = {
@@ -317,10 +331,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DACD13E5291AC1FB000B6096 /* HomeView.swift in Sources */,
 				DA8B48DE2917CC31008387D0 /* ContentView.swift in Sources */,
 				DA8B490D2917F737008387D0 /* SearchView.swift in Sources */,
 				DA8B490F2917F779008387D0 /* AddItemView.swift in Sources */,
 				DAEEEFB8291921BD00E50F41 /* CameraView.swift in Sources */,
+				DACD13E7291ADFEF000B6096 /* SettingsView.swift in Sources */,
 				DA8B491429182441008387D0 /* SearchItemView.swift in Sources */,
 				DAEEEFB429191EEE00E50F41 /* ImagePickerView.swift in Sources */,
 				DA8B48DC2917CC31008387D0 /* invoice_calculatorApp.swift in Sources */,
@@ -492,8 +508,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -531,8 +546,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
