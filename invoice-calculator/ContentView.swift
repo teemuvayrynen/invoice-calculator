@@ -24,7 +24,6 @@ struct ContentView: View {
                     }
                     .tag(0)
                 
-                
                 CameraView(isImagePickerDisplay: $isImagePickerDisplay, selection: $selection, selectedImage: $selectedImage)
                     .tabItem {
                         Label("Calculate", systemImage: "plusminus.circle")
