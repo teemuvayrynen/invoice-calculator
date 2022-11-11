@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct CameraView: View {
-    var sourceType: UIImagePickerController.SourceType = .camera
+    @Binding var sourceType: UIImagePickerController.SourceType
     @Binding var isImagePickerDisplay: Bool
     @Binding var selection: Int
     @Binding var selectedImage: UIImage?
+    @Binding var isPresentingConfirm: Bool
     
     
     var body: some View {
@@ -21,7 +22,7 @@ struct CameraView: View {
                     Spacer()
                     Button(action: {
                         selectedImage = nil
-                        isImagePickerDisplay.toggle()
+                      isPresentingConfirm.toggle()
                     }, label: {
                         Image(systemName: "camera").foregroundColor(Color.primary)
                     })

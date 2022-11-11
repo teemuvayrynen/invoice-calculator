@@ -8,8 +8,9 @@
 import SwiftUI
 
 @main
+
 struct invoice_calculatorApp: App {
-    @AppStorage("isDarkMode") private var isDarkMode = false
+    @AppStorage("isDarkMode") private var isDarkMode = true
     
     var body: some Scene {
         WindowGroup {

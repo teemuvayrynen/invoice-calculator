@@ -18,6 +18,7 @@
 		DACD13E5291AC1FB000B6096 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD13E4291AC1FB000B6096 /* HomeView.swift */; };
 		DACD13E7291ADFEF000B6096 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD13E6291ADFEF000B6096 /* SettingsView.swift */; };
 		DAE82C2B291DB66900565D90 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE82C2A291DB66900565D90 /* SearchView.swift */; };
+		DAE82C2D291DC0CF00565D90 /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE82C2C291DC0CF00565D90 /* AddProductView.swift */; };
 		DAEEEFB429191EEE00E50F41 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEEFB329191EEE00E50F41 /* ImagePickerView.swift */; };
 		DAEEEFB8291921BD00E50F41 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEEFB7291921BD00E50F41 /* CameraView.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		DACD13E4291AC1FB000B6096 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DACD13E6291ADFEF000B6096 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DAE82C2A291DB66900565D90 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		DAE82C2C291DC0CF00565D90 /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
 		DAEEEFB329191EEE00E50F41 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		DAEEEFB7291921BD00E50F41 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE82C2A291DB66900565D90 /* SearchView.swift */,
+				DAE82C2C291DC0CF00565D90 /* AddProductView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				DACD13E5291AC1FB000B6096 /* HomeView.swift in Sources */,
 				DA8B48DE2917CC31008387D0 /* ContentView.swift in Sources */,
 				DAEEEFB8291921BD00E50F41 /* CameraView.swift in Sources */,
+				DAE82C2D291DC0CF00565D90 /* AddProductView.swift in Sources */,
 				DACD13E7291ADFEF000B6096 /* SettingsView.swift in Sources */,
 				DAE82C2B291DB66900565D90 /* SearchView.swift in Sources */,
 				DAEEEFB429191EEE00E50F41 /* ImagePickerView.swift in Sources */,
