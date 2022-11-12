@@ -10,10 +10,9 @@ import SwiftUI
 
 struct ImagePickerView: UIViewControllerRepresentable {
     
-    @Binding var selectedImage: UIImage?
-    @Binding var selection: Int
-    @Environment(\.presentationMode) var isPresented
     var sourceType: UIImagePickerController.SourceType
+    var didFinishScanning: ((_ result: UIImage) -> Void)
+    var didCancelScanning: () -> Void
         
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let imagePicker = UIImagePickerController()
@@ -42,13 +41,11 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.originalImage] as? UIImage else { return }
-        self.picker.selectedImage = selectedImage
-        self.picker.isPresented.wrappedValue.dismiss()
+        self.picker.didFinishScanning(selectedImage)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.picker.selection = 0
-        self.picker.isPresented.wrappedValue.dismiss()
+        self.picker.didCancelScanning()
     }
 }
 

@@ -15,6 +15,8 @@
 		DA8B48F82917CC33008387D0 /* invoice_calculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B48F72917CC33008387D0 /* invoice_calculatorUITests.swift */; };
 		DA8B48FA2917CC33008387D0 /* invoice_calculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B48F92917CC33008387D0 /* invoice_calculatorUITestsLaunchTests.swift */; };
 		DA8B49162918252F008387D0 /* BoxViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B49152918252F008387D0 /* BoxViewModifier.swift */; };
+		DACC55A8291FACC0008919D8 /* TextRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC55A7291FACC0008919D8 /* TextRecognition.swift */; };
+		DACC55AA291FAF26008919D8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACC55A9291FAF26008919D8 /* Model.swift */; };
 		DACD13E5291AC1FB000B6096 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD13E4291AC1FB000B6096 /* HomeView.swift */; };
 		DACD13E7291ADFEF000B6096 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD13E6291ADFEF000B6096 /* SettingsView.swift */; };
 		DAE82C2B291DB66900565D90 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE82C2A291DB66900565D90 /* SearchView.swift */; };
@@ -53,6 +55,8 @@
 		DA8B48F72917CC33008387D0 /* invoice_calculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invoice_calculatorUITests.swift; sourceTree = "<group>"; };
 		DA8B48F92917CC33008387D0 /* invoice_calculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invoice_calculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DA8B49152918252F008387D0 /* BoxViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxViewModifier.swift; sourceTree = "<group>"; };
+		DACC55A7291FACC0008919D8 /* TextRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognition.swift; sourceTree = "<group>"; };
+		DACC55A9291FAF26008919D8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DACD13E4291AC1FB000B6096 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DACD13E6291ADFEF000B6096 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DAE82C2A291DB66900565D90 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				DA8B48DF2917CC33008387D0 /* Assets.xcassets */,
 				DA8B48E12917CC33008387D0 /* invoice_calculator.entitlements */,
 				DA8B48E22917CC33008387D0 /* Preview Content */,
+				DACC55A9291FAF26008919D8 /* Model.swift */,
 			);
 			path = "invoice-calculator";
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 		DACE0B3C291852180051091B /* functions */ = {
 			isa = PBXGroup;
 			children = (
+				DACC55A7291FACC0008919D8 /* TextRecognition.swift */,
 			);
 			path = functions;
 			sourceTree = "<group>";
@@ -331,11 +337,13 @@
 				DACD13E5291AC1FB000B6096 /* HomeView.swift in Sources */,
 				DA8B48DE2917CC31008387D0 /* ContentView.swift in Sources */,
 				DAEEEFB8291921BD00E50F41 /* CameraView.swift in Sources */,
+				DACC55AA291FAF26008919D8 /* Model.swift in Sources */,
 				DAE82C2D291DC0CF00565D90 /* AddProductView.swift in Sources */,
 				DACD13E7291ADFEF000B6096 /* SettingsView.swift in Sources */,
 				DAE82C2B291DB66900565D90 /* SearchView.swift in Sources */,
 				DAEEEFB429191EEE00E50F41 /* ImagePickerView.swift in Sources */,
 				DA8B48DC2917CC31008387D0 /* invoice_calculatorApp.swift in Sources */,
+				DACC55A8291FACC0008919D8 /* TextRecognition.swift in Sources */,
 				DA8B49162918252F008387D0 /* BoxViewModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
