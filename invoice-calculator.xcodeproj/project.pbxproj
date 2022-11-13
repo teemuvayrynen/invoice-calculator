@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA1FFC37292150E200B0FAFA /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1FFC36292150E200B0FAFA /* FirestoreManager.swift */; };
+		DA1FFC3E292154B000B0FAFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA1FFC3D292154B000B0FAFA /* GoogleService-Info.plist */; };
+		DA1FFC472921675600B0FAFA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DA1FFC462921675600B0FAFA /* FirebaseFirestore */; };
 		DA8B48DC2917CC31008387D0 /* invoice_calculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B48DB2917CC31008387D0 /* invoice_calculatorApp.swift */; };
 		DA8B48DE2917CC31008387D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B48DD2917CC31008387D0 /* ContentView.swift */; };
 		DA8B48E02917CC33008387D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8B48DF2917CC33008387D0 /* Assets.xcassets */; };
@@ -43,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA1FFC36292150E200B0FAFA /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		DA1FFC3D292154B000B0FAFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA8B48D82917CC31008387D0 /* invoice-calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "invoice-calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8B48DB2917CC31008387D0 /* invoice_calculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invoice_calculatorApp.swift; sourceTree = "<group>"; };
 		DA8B48DD2917CC31008387D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1FFC472921675600B0FAFA /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +119,7 @@
 		DA8B48DA2917CC31008387D0 /* invoice-calculator */ = {
 			isa = PBXGroup;
 			children = (
+				DA1FFC3D292154B000B0FAFA /* GoogleService-Info.plist */,
 				DACE0B3C291852180051091B /* functions */,
 				DA8B4910291821EC008387D0 /* modifiers */,
 				DA8B49062917E414008387D0 /* View */,
@@ -191,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				DACC55A7291FACC0008919D8 /* TextRecognition.swift */,
+				DA1FFC36292150E200B0FAFA /* FirestoreManager.swift */,
 			);
 			path = functions;
 			sourceTree = "<group>";
@@ -220,6 +228,9 @@
 			dependencies = (
 			);
 			name = "invoice-calculator";
+			packageProductDependencies = (
+				DA1FFC462921675600B0FAFA /* FirebaseFirestore */,
+			);
 			productName = "invoice-calculator";
 			productReference = DA8B48D82917CC31008387D0 /* invoice-calculator.app */;
 			productType = "com.apple.product-type.application";
@@ -292,6 +303,9 @@
 				Base,
 			);
 			mainGroup = DA8B48CF2917CC31008387D0;
+			packageReferences = (
+				DA1FFC452921675600B0FAFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = DA8B48D92917CC31008387D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -310,6 +324,7 @@
 			files = (
 				DA8B48E42917CC33008387D0 /* Preview Assets.xcassets in Resources */,
 				DA8B48E02917CC33008387D0 /* Assets.xcassets in Resources */,
+				DA1FFC3E292154B000B0FAFA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +356,7 @@
 				DAE82C2D291DC0CF00565D90 /* AddProductView.swift in Sources */,
 				DACD13E7291ADFEF000B6096 /* SettingsView.swift in Sources */,
 				DAE82C2B291DB66900565D90 /* SearchView.swift in Sources */,
+				DA1FFC37292150E200B0FAFA /* FirestoreManager.swift in Sources */,
 				DAEEEFB429191EEE00E50F41 /* ImagePickerView.swift in Sources */,
 				DA8B48DC2917CC31008387D0 /* invoice_calculatorApp.swift in Sources */,
 				DACC55A8291FACC0008919D8 /* TextRecognition.swift in Sources */,
@@ -696,6 +712,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DA1FFC452921675600B0FAFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA1FFC462921675600B0FAFA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA1FFC452921675600B0FAFA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA8B48D02917CC31008387D0 /* Project object */;
 }

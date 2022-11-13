@@ -22,3 +22,9 @@ struct TempItem {
     var text: String = ""
     var midY: CGFloat = 0.0
 }
+
+struct Product: Identifiable {
+    var id: String
+    var name: String
+    var type: String
+}

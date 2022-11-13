@@ -10,22 +10,21 @@ import SwiftUI
 struct SearchView: View {
     @State private var searchText: String = ""
     @State private var presentAlert: Bool = false
+    @ObservedObject var model: FiretoreManager
     
-    var names = ["kakka", "kissa", "poissa", "kkkD", "JDIJWID"]
-    
-    var searchResult: [String] {
+    var searchResult: [Product] {
         if (searchText.isEmpty) {
-            return names
+            return model.products
         } else {
-            return names.filter { $0.localizedCaseInsensitiveContains(searchText) }
+            return model.products.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
         }
     }
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(searchResult, id: \.self) { name in
-                    TypePicker(name: name)
+                ForEach(model.products) { item in
+                    TypePicker(name: item.name)
                 }
             }
             .searchable(text: $searchText)
@@ -63,14 +62,14 @@ struct TypePicker: View {
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
-            .frame(width:200)
+            .frame(width:190)
             
         }
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
+//struct SearchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchView()
+//    }
+//}

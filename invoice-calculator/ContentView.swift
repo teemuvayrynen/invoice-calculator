@@ -8,17 +8,19 @@
 import SwiftUI
 
 
-
 struct ContentView: View {
     @State var isImagePickerDisplay = false
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State private var selection = 0
     @State private var selectedImage: UIImage?
     @State private var isPresentingConfirm: Bool = false
-
+    @ObservedObject var model = FiretoreManager()
+    
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = .systemBlue
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        
+        model.getData()
     }
 
     var body: some View {
@@ -58,7 +60,7 @@ struct ContentView: View {
                     .tag(1)
                     
                   
-                SearchView()
+                SearchView(model: model)
                     .tabItem {
                         Label("Search", systemImage: "magnifyingglass")
                     }
