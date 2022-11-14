@@ -23,7 +23,7 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(model.products) { item in
+                ForEach(searchResult) { item in
                     TypePicker(name: item.name)
                 }
             }

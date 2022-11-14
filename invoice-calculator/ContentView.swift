@@ -32,7 +32,7 @@ struct ContentView: View {
                     }
                     .tag(0)
               
-                CameraView(sourceType: $sourceType, isImagePickerDisplay: $isImagePickerDisplay, selection: $selection, selectedImage: $selectedImage, isPresentingConfirm: $isPresentingConfirm)
+                CameraView(sourceType: $sourceType, isImagePickerDisplay: $isImagePickerDisplay, selection: $selection, selectedImage: $selectedImage, isPresentingConfirm: $isPresentingConfirm, model: model)
                     .tabItem {
                         Label("Calculate", systemImage: "plusminus.circle")
                     }

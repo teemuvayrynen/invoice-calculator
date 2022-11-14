@@ -11,14 +11,26 @@ import Vision
 struct TextRecognition {
     var scannedImage: UIImage
     @ObservedObject var recognizedContent: RecognizedContent
+    @ObservedObject var model: FiretoreManager
     var didFinishRecognition: () -> Void
     
     private func createObjects(tempArray: [TempItem]) {
         tempArray.forEach { first in
             tempArray.forEach { second in
-                if (first.text != second.text && abs(first.midY - second.midY) < 0.01) {
-                    
+                let formatted = first.text.replacingOccurrences(of: " ", with: "")
+                let products = model.products.filter { $0.name.replacingOccurrences(of: " ", with: "").getLevenshtein(target: formatted) < 4 }
+                
+                if (!products.isEmpty) {
+                    if (first.text != second.text && abs(first.midY - second.midY) < 0.01) {
+                        var textItem = TextItem()
+                        textItem.product = first.text
+                        textItem.price = second.text.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: ",", with: ".").replacingOccurrences(of: "B", with: "").replacingOccurrences(of: "A", with: "")
+                        DispatchQueue.main.async {
+                            recognizedContent.items.append(textItem)
+                        }
+                    }
                 }
+                
             }
         }
         

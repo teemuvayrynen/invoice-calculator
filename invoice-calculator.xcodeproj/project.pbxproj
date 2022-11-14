@@ -10,6 +10,7 @@
 		DA1FFC37292150E200B0FAFA /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1FFC36292150E200B0FAFA /* FirestoreManager.swift */; };
 		DA1FFC3E292154B000B0FAFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA1FFC3D292154B000B0FAFA /* GoogleService-Info.plist */; };
 		DA1FFC472921675600B0FAFA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DA1FFC462921675600B0FAFA /* FirebaseFirestore */; };
+		DA6481932922D74E0013D5FB /* Levenshtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6481922922D74E0013D5FB /* Levenshtein.swift */; };
 		DA8B48DC2917CC31008387D0 /* invoice_calculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B48DB2917CC31008387D0 /* invoice_calculatorApp.swift */; };
 		DA8B48DE2917CC31008387D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B48DD2917CC31008387D0 /* ContentView.swift */; };
 		DA8B48E02917CC33008387D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8B48DF2917CC33008387D0 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		DA1FFC36292150E200B0FAFA /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		DA1FFC3D292154B000B0FAFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA6481922922D74E0013D5FB /* Levenshtein.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levenshtein.swift; sourceTree = "<group>"; };
 		DA8B48D82917CC31008387D0 /* invoice-calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "invoice-calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8B48DB2917CC31008387D0 /* invoice_calculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invoice_calculatorApp.swift; sourceTree = "<group>"; };
 		DA8B48DD2917CC31008387D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				DACC55A7291FACC0008919D8 /* TextRecognition.swift */,
 				DA1FFC36292150E200B0FAFA /* FirestoreManager.swift */,
+				DA6481922922D74E0013D5FB /* Levenshtein.swift */,
 			);
 			path = functions;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				DAEEEFB429191EEE00E50F41 /* ImagePickerView.swift in Sources */,
 				DA8B48DC2917CC31008387D0 /* invoice_calculatorApp.swift in Sources */,
 				DACC55A8291FACC0008919D8 /* TextRecognition.swift in Sources */,
+				DA6481932922D74E0013D5FB /* Levenshtein.swift in Sources */,
 				DA8B49162918252F008387D0 /* BoxViewModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
