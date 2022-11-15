@@ -20,12 +20,19 @@ struct SearchView: View {
         }
     }
     
+    func delete(at offset: IndexSet) {
+        for i in offset {
+            model.deleteData(id: model.products[i].id)
+        }
+    }
+    
+    
     var body: some View {
         NavigationView {
             List {
                 ForEach(searchResult) { item in
                     TypePicker(item: item, cameraView: false)
-                }
+                }.onDelete(perform: delete)
             }
             .searchable(text: $searchText)
             .navigationTitle( "Products")
@@ -50,6 +57,7 @@ struct TypePicker: View {
     var cameraView: Bool
     var buttons = ["Nothing", "Custom", "Half"]
     @State private var selectedType: Int = 0
+    @EnvironmentObject var model: FiretoreManager
     
     var body: some View {
         HStack {
@@ -65,6 +73,13 @@ struct TypePicker: View {
             }
             .pickerStyle(SegmentedPickerStyle())
             .frame(width: cameraView ? 150 : 190)
+            .onChange(of: selectedType) { newValue in
+                if (cameraView) {
+                    
+                } else {
+                    model.updateData(id: item.id, type: newValue)
+                }
+            }
             
         }
         .onAppear {

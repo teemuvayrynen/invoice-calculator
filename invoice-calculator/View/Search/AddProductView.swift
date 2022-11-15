@@ -11,6 +11,7 @@ struct AddProductView: View {
     @State private var productName: String = ""
     @State private var selectedType: Int = 0
     @Binding var presentAlert: Bool
+    @EnvironmentObject var model: FiretoreManager
     
     var buttons = ["Nothing", "Custom", "Half"]
     
@@ -52,6 +53,7 @@ struct AddProductView: View {
                 .padding(.top, 10)
             
             Button(action: {
+                model.addData(name: productName, type: selectedType)
                 productName = ""
             }, label: {
                 Text("Done").foregroundColor(Color.white)
