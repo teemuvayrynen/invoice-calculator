@@ -32,7 +32,7 @@ struct ContentView: View {
                     }
                     .tag(0)
               
-                CameraView(sourceType: $sourceType, isImagePickerDisplay: $isImagePickerDisplay, selection: $selection, selectedImage: $selectedImage, isPresentingConfirm: $isPresentingConfirm, model: model)
+                CameraView(sourceType: $sourceType, isImagePickerDisplay: $isImagePickerDisplay, selection: $selection, selectedImage: $selectedImage, isPresentingConfirm: $isPresentingConfirm)
                     .tabItem {
                         Label("Calculate", systemImage: "plusminus.circle")
                     }
@@ -60,7 +60,7 @@ struct ContentView: View {
                     .tag(1)
                     
                   
-                SearchView(model: model)
+                SearchView()
                     .tabItem {
                         Label("Search", systemImage: "magnifyingglass")
                     }
@@ -72,6 +72,7 @@ struct ContentView: View {
                     }
                     .tag(3)
             }
+            .environmentObject(model)
         }
     }
 }

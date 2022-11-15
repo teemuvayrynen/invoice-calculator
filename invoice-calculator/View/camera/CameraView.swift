@@ -15,75 +15,52 @@ struct CameraView: View {
     @Binding var isPresentingConfirm: Bool
     @State var isRecognizing = false
     @StateObject var recognizedContent = RecognizedContent()
-    @ObservedObject var model: FiretoreManager
+    @EnvironmentObject var model: FiretoreManager
+    
     @State private var selectedNumerator = 0
     @State private var selectedDivider = 0
     
     
     var body: some View {
         VStack {
-            if (selectedImage != nil) {
-                HStack {
-                    Spacer()
-                    Button(action: {
-                      isPresentingConfirm.toggle()
-                    }, label: {
-                        Image(systemName: "camera").foregroundColor(Color.primary)
-                    })
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 14)
-                    .background(Color("insertBackground"))
-                    .cornerRadius(60)
-                    .shadow(radius: 6)
-                    .padding()
-                }
-            }
-            if (!isRecognizing) {
+            NavigationView {
                 VStack {
-                    Form {
-                        Section(header: Text("Fraction")) {
-                            Picker("Numerator", selection: $selectedNumerator) {
-                                ForEach(1..<6) {
-                                    Text("\($0)")
+                    if (!isRecognizing && selectedImage != nil) {
+                        Form {
+                            Section(header: Text("Fraction")) {
+                                Picker("Numerator", selection: $selectedNumerator) {
+                                    ForEach(1..<6) {
+                                        Text("\($0)")
+                                    }
+                                }
+                                Picker("Divider", selection: $selectedDivider) {
+                                    ForEach(1..<6) {
+                                        Text("\($0)")
+                                    }
                                 }
                             }
-                            Picker("Divider", selection: $selectedDivider) {
-                                ForEach(1..<6) {
-                                    Text("\($0)")
+                            Section(header: Text("Products")) {
+                                List(recognizedContent.items) { item in
+                                    TypePicker(item: item, cameraView: true)
                                 }
                             }
                         }
-                        Section(header: Text("Items")) {
-                            HStack {
-                                Text("Half product")
-                                Spacer()
-                                Image(systemName: "divide.circle")
-                            }
-                            HStack {
-                                Text("Custom divide")
-                                Spacer()
-                                Image(systemName: "divide.square")
-                            }
-                            HStack {
-                                Text("Payers product")
-                                Spacer()
-                                Image(systemName: "person.fill")
-                            }
-                        }
-                        Section(header: Text("Products")) {
-                            List(recognizedContent.items, id: \.self) { textItem in
-                                Text(String(textItem.product))
-                            }
-                        }
+                    } else if (selectedImage != nil && isRecognizing) {
+                        Spacer()
+                        ProgressView().progressViewStyle(.circular)
+                        Spacer()
+                    }
+                }.toolbar {
+                    if selectedImage != nil {
+                        Button(action: {
+                            isPresentingConfirm.toggle()
+                        }, label: {
+                            Image(systemName: "camera").foregroundColor(Color.primary)
+                        })
                     }
                 }
-            } else {
-                Spacer()
-                ProgressView().progressViewStyle(.circular)
-                Spacer()
             }
-            
-            
+
         }.sheet(isPresented: self.$isImagePickerDisplay,
             onDismiss: {
             if (selectedImage == nil) {
@@ -94,8 +71,8 @@ struct CameraView: View {
                 ImagePickerView(sourceType: self.sourceType) { result in
                     selectedImage = result
                     isImagePickerDisplay = false
-                    
                     isRecognizing = true
+                    recognizedContent.items.removeAll()
                     
                     TextRecognition(scannedImage: selectedImage!, recognizedContent: recognizedContent, model: model) {
                         isRecognizing = false
@@ -108,12 +85,3 @@ struct CameraView: View {
     }
 
 }
-
-extension View {
-    func Print(_ vars: Any...) -> some View {
-        for v in vars { print(v) }
-        return EmptyView()
-    }
-}
-
-

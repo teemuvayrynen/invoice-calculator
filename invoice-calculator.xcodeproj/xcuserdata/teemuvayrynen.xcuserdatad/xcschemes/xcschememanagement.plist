@@ -91,7 +91,25 @@
 		<key>invoice-calculator.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>DA8B48D72917CC31008387D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA8B48E82917CC33008387D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA8B48F22917CC33008387D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchView: View {
     @State private var searchText: String = ""
     @State private var presentAlert: Bool = false
-    @ObservedObject var model: FiretoreManager
+    @EnvironmentObject var model: FiretoreManager
     
     var searchResult: [Product] {
         if (searchText.isEmpty) {
@@ -24,7 +24,7 @@ struct SearchView: View {
         NavigationView {
             List {
                 ForEach(searchResult) { item in
-                    TypePicker(name: item.name)
+                    TypePicker(item: item, cameraView: false)
                 }
             }
             .searchable(text: $searchText)
@@ -46,15 +46,17 @@ struct SearchView: View {
 }
 
 struct TypePicker: View {
-    var name: String
+    var item: Product
+    var cameraView: Bool
     var buttons = ["Nothing", "Custom", "Half"]
     @State private var selectedType: Int = 0
     
-    
-    
     var body: some View {
         HStack {
-            Text(name)
+            if (cameraView) {
+                Text(item.price)
+            }
+            Text(item.name)
             Spacer()
             Picker("Numerator", selection: $selectedType) {
                 ForEach(0..<3, id: \.self) {
@@ -62,14 +64,11 @@ struct TypePicker: View {
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
-            .frame(width:190)
+            .frame(width: cameraView ? 150 : 190)
             
+        }
+        .onAppear {
+            selectedType = item.type
         }
     }
 }
-
-//struct SearchView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchView()
-//    }
-//}

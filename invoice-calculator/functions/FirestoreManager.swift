@@ -21,7 +21,7 @@ class FiretoreManager: ObservableObject {
                         self.products = snapshot.documents.map { d in
                             return Product(id: d.documentID,
                                            name: d["name"] as? String ?? "",
-                                           type: d["type"] as? String ?? "")
+                                           type: d["type"] as? Int ?? 0)
                             
                         }
                     }

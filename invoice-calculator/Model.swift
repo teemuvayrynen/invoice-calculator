@@ -9,12 +9,7 @@ import Foundation
 import Vision
 
 class RecognizedContent: ObservableObject {
-    @Published var items = [TextItem]()
-}
-
-struct TextItem: Hashable {
-    var product: String = ""
-    var price: String = ""
+    @Published var items = [Product]()
 }
 
 struct TempItem {
@@ -24,7 +19,8 @@ struct TempItem {
 }
 
 struct Product: Identifiable {
-    var id: String
-    var name: String
-    var type: String
+    var id: String = UUID().uuidString
+    var name: String = ""
+    var type: Int = 0
+    var price: String = ""
 }
